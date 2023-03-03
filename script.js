@@ -11,3 +11,8 @@ images.forEach((img) => {
     viewer.appendChild(image);
   });
 });
+
+viewer.addEventListener("click", (e) => {
+  viewer.id = "none";
+  viewer.innerHTML = "";
+});
