@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: rgb(37, 37, 37);
+}
+
+h1 {
+  text-align: center;
+  color: whitesmoke;
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+}
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 30px 45px;
+  justify-content: center;
+}
+.gallery img {
+  width: 28rem;
+}
