@@ -26,6 +26,10 @@ h1 {
   cursor: pointer;
 }
 
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
 .viewer {
   background-color: rgba(0, 0, 0, 0.539);
   height: 100%;
