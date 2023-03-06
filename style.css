@@ -24,6 +24,7 @@ h1 {
 .gallery img {
   width: 25rem;
   cursor: pointer;
+  transition: 1s;
 }
 
 .gallery img:hover {
