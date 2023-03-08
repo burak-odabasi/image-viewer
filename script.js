@@ -7,7 +7,9 @@ images.forEach((img) => {
   img.addEventListener("click", (e) => {
     viewer.id = "active";
     const image = document.createElement("img");
-    image.src = img.src;
+    const animal = e.target.id;
+    image.src = `./images/${animal}-big.jpg`;
+    image.style.height = "70vh";
     viewer.appendChild(image);
   });
 });

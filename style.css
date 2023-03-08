@@ -22,7 +22,7 @@ h1 {
   justify-content: center;
 }
 .gallery img {
-  width: 25rem;
+  width: 20rem;
   cursor: pointer;
   transition: 1s;
 }
@@ -32,16 +32,16 @@ h1 {
 }
 
 .viewer {
+  display: none;
+}
+
+#active {
   background-color: rgba(0, 0, 0, 0.539);
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 50;
-  display: none;
-}
-
-#active {
   display: grid;
   text-align: center;
   place-items: center;
