@@ -46,3 +46,26 @@ h1 {
   text-align: center;
   place-items: center;
 }
+
+button {
+  background: none;
+  border: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.arrow:nth-child(1) {
+  margin-left: 10%;
+  left: 0;
+}
+.arrow:nth-child(2) {
+  margin-right: 10%;
+  right: 0;
+}
+
+.exit {
+  margin-top: 0rem;
+  margin-right: 0rem;
+  top: 0;
+  right: 0;
+}

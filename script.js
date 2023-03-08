@@ -1,20 +1,26 @@
-const viewer = document.createElement("div");
-viewer.className = "viewer";
-document.body.appendChild(viewer);
+const viewer = document.querySelector(".viewer");
+const exit = document.querySelector(".exit");
+const back = document.querySelector(".back");
+const next = document.querySelector(".next");
 
-const images = document.querySelectorAll("img");
+let image = document.createElement("img");
+
+const images = document.querySelectorAll(".animal");
 images.forEach((img) => {
   img.addEventListener("click", (e) => {
     viewer.id = "active";
-    const image = document.createElement("img");
-    const animal = e.target.id;
-    image.src = `./images/${animal}-big.jpg`;
-    image.style.height = "70vh";
+    let animal = e.target.id;
+    image.src = `./images/${img.id}-big.jpg`;
+    back.src = `./images/arrowback.png`;
+    next.src = `./images/arrownext.png`;
+    image.style.height = "80vh";
+    image.style.Maxwidth = "60vw";
+    image.style.border = "15px solid black";
     viewer.appendChild(image);
   });
 });
 
-viewer.addEventListener("click", (e) => {
+exit.addEventListener("click", () => {
   viewer.id = "none";
-  viewer.innerHTML = "";
+  image.remove();
 });
