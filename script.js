@@ -8,7 +8,7 @@ const back = document.querySelector(".back");
 const next = document.querySelector(".next");
 const exit = document.querySelector(".exit");
 
-//when any tn clicked, open viewer, show big image
+//when any thumbnail clicked, open viewer, show big image
 gallery.addEventListener("click", (e) => {
   if (e.target.tagName === "IMG") {
     selectedImage.src = e.target.src.replace("small", "big");
