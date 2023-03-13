@@ -8,7 +8,7 @@ const largeImages = [];
 //for each thumbnail add large version to its array
 for (let i = 0; i < thumbnailImages.length; i++) {
   const largeImage = new Image();
-  largeImage.src = thumbnailImages[i].src;
+  largeImage.src = thumbnailImages[i].src.replace("small", "big");
   largeImages.push(largeImage);
 }
 
@@ -38,9 +38,21 @@ exit.addEventListener("click", () => {
 
 //show prev image
 back.addEventListener("click", () => {
-  selectedImage.src = "";
+  if (currentImageIndex > 0) {
+    currentImageIndex--;
+    selectedImage.src = largeImages[currentImageIndex].src;
+  } else {
+    currentImageIndex = largeImages.length - 1;
+    selectedImage.src = largeImages[currentImageIndex].src;
+  }
 });
 //show next image
 next.addEventListener("click", () => {
-  selectedImage.src = "";
+  if (currentImageIndex < largeImages.length - 1) {
+    currentImageIndex++;
+    selectedImage.src = largeImages[currentImageIndex].src;
+  } else {
+    currentImageIndex = 0;
+    selectedImage.src = largeImages[currentImageIndex].src;
+  }
 });
