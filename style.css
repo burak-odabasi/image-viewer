@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(36, 36, 36);
 }
 
 h1 {
@@ -21,6 +21,7 @@ h1 {
   flex-flow: row wrap;
   gap: 30px 45px;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 .gallery img {
   width: 20rem;
