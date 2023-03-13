@@ -1,22 +1,33 @@
+//thumbnail pics are in gallery, select to add listener
+const gallery = document.querySelector(".gallery");
+
+//viewer is visible when image is clicked
 const viewer = document.querySelector(".viewer");
-const exit = document.querySelector(".exit");
+const selectedImage = document.querySelector("#selected-image");
 const back = document.querySelector(".back");
 const next = document.querySelector(".next");
+const exit = document.querySelector(".exit");
 
-let image = document.createElement("img");
-
-const images = document.querySelectorAll(".gallery img");
-images.forEach((img) => {
-  img.addEventListener("click", (e) => {
+//when any tn clicked, open viewer, show big image
+gallery.addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    selectedImage.src = e.target.src.replace("small", "big");
     viewer.id = "active";
-    image.src = `./images/${img.id}-big.jpg`;
-    image.style.height = "80vh";
-    image.style.border = "15px solid black";
-    viewer.appendChild(image);
-  });
+    viewer.appendChild(selectedImage);
+  }
 });
 
+//remove big image, close viewer div
 exit.addEventListener("click", () => {
   viewer.id = "none";
-  image.remove();
+  selectedImage.remove();
+});
+
+//show prev image
+back.addEventListener("click", () => {
+  selectedImage.src = "";
+});
+//show next image
+next.addEventListener("click", () => {
+  selectedImage.src = "";
 });

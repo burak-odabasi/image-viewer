@@ -32,9 +32,22 @@ h1 {
 .gallery img:hover {
   transform: scale(1.1);
 }
-
+/*  Below styles apply when an image is selected
+*************************************************/
 .viewer {
   display: none;
+}
+
+.viewer img:nth-child(1n) {
+  width: 4rem;
+}
+.viewer img:nth-child(4n) {
+  width: auto;
+}
+
+#selected-image {
+  border: 15px solid black;
+  max-height: 90vh;
 }
 
 #active {
@@ -70,10 +83,4 @@ button {
   margin-right: 0rem;
   top: 0;
   right: 0;
-}
-.viewer img:nth-child(1n) {
-  width: 4rem;
-}
-.viewer img:nth-child(4n) {
-  width: auto;
 }
