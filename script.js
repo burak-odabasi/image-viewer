@@ -1,10 +1,16 @@
 //thumbnail pics are in gallery, select to add listener
 const gallery = document.querySelector(".gallery");
 
-// preload large images to cache to use viewer more smoothly
+//create array for preloading large images from thumbnails
 const thumbnailImages = gallery.querySelectorAll(".gallery img");
-const smallImages = Array.from(thumbnailImages);
-const largeImages = smallImages.map((Image) => {});
+const largeImages = [];
+
+//for each thumbnail add large version to its array
+for (let i = 0; i < thumbnailImages.length; i++) {
+  const largeImage = new Image();
+  largeImage.src = thumbnailImages[i].src;
+  largeImages.push(largeImage);
+}
 
 //viewer is visible when image is clicked
 const viewer = document.querySelector(".viewer");
